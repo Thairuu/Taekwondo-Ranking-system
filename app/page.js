@@ -116,8 +116,7 @@ export default async function HomePage({ searchParams }) {
         <h1>Kiambu county athlete rankings</h1>
         <p className="hero-sub">
           Points earned from sanctioned opens and trials involving Kiambu
-          athletes. Unofficial and independently run &mdash; affiliated
-          with the Kenya Taekwondo Federation.
+          athletes. Affiliated with the Kenya Taekwondo Federation.
         </p>
         <div className="season-strip">
           <div>

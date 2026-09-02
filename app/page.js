@@ -213,8 +213,7 @@ export default async function HomePage({ searchParams }) {
             <div>Rank</div>
             <div></div>
             <div>Athlete</div>
-            <div>Weight</div>
-            <div>Belt</div>
+            <div>Weight / Belt</div>
             <div>Points</div>
             <div>Last result</div>
           </div>
@@ -233,10 +232,12 @@ export default async function HomePage({ searchParams }) {
                   <div className="name">{a.name}</div>
                   <div className="dojang">{a.club}</div>
                 </div>
-                <div className="weight">{(a.weight_class || "").toUpperCase()}</div>
-                <div className={`belt ${beltClass(a.belt)}`}>
-                  <span className="chip" />
-                  {a.belt || "Unranked"}
+                <div className="meta">
+                  <div className="weight">{(a.weight_class || "").toUpperCase()}</div>
+                  <div className={`belt ${beltClass(a.belt)}`}>
+                    <span className="chip" />
+                    {a.belt || "Unranked"}
+                  </div>
                 </div>
                 <div className="points">
                   {entry.points.toLocaleString()}

@@ -108,11 +108,17 @@ h1{
 }
 .row{
   display:grid;
-  grid-template-columns:52px 56px 1.6fr 1fr 0.85fr 0.95fr 1.25fr;
+  grid-template-columns:52px 56px 1.6fr 1.5fr 0.95fr 1.25fr;
   align-items:center;
   gap:16px;
   padding:16px 10px;
   border-bottom:1px solid var(--line);
+}
+.meta{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
 }
 .row.head{
   font-family:'JetBrains Mono',monospace; font-size:10.5px; text-transform:uppercase;
@@ -195,10 +201,35 @@ h1{
 .legend span{display:flex; align-items:center; gap:6px;}
 .legend i{width:8px;height:8px;border-radius:50%;display:inline-block;}
 
-@media (max-width:720px){
-  .hero{padding:32px 20px 24px;}
-  .filters{padding:16px 20px;}
-  .list{padding:0 20px 20px;}
-  .foot{padding:16px 20px 32px;}
+@media (max-width:900px){
+  .hero{padding:36px 28px 26px;}
+  .filters{padding:16px 28px;}
+  .list{padding:10px 28px 20px;}
+  .foot{padding:16px 28px 32px;}
+  .row{grid-template-columns:44px 48px 1.4fr 1.15fr 0.85fr 1.1fr; gap:10px; padding:14px 6px;}
+  .outcome{font-size:11.5px;}
+}
+
+@media (max-width:640px){
+  .hero{padding:28px 18px 22px;}
+  .filters{padding:16px 18px;}
+  .list{padding:0 18px 20px;}
+  .foot{padding:16px 18px 32px;}
   h1{font-size:28px;}
+  .row.head{display:none;}
+  .row{
+    grid-template-columns:36px 44px 1fr auto;
+    grid-template-areas:
+      "rank avatar athlete points"
+      "rank avatar meta    meta"
+      "outcome outcome outcome outcome";
+    row-gap:8px;
+    padding:14px 6px;
+  }
+  .rank{grid-area:rank; font-size:18px;}
+  .avatar{grid-area:avatar; width:44px; height:44px; font-size:14px;}
+  .athlete{grid-area:athlete;}
+  .meta{grid-area:meta;}
+  .points{grid-area:points; font-size:16px;}
+  .outcome{grid-area:outcome; padding-top:6px; border-top:1px dashed var(--line);}
 }
